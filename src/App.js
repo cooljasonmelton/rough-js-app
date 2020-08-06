@@ -7,29 +7,54 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 const App = () => {
   const [show, setShow] = useState(false)
+  const [active, setActive] = useState(1)
+
 
   return (
-    <div className="App">
+    <div className="App" >
+      <div className="tripwire" 
+        onMouseEnter={()=>setActive(1)}
+        onMouseLeave={()=>setActive(null)}>
 
-      <RoughNotation onClick={()=>setShow(!show)} 
-        type="underline" 
-        color="red"
-        customElement={"h1"}
-        show={show}>
-        JASON MELTON
-      </RoughNotation>
-      <RoughNotation onClick={()=>setShow(!show)} 
-        strokeWidth={20}
-        type="box" 
-        show={show}>
-        JASON MELTON
-      </RoughNotation>
+        <RoughNotation onClick={()=>setShow(!show)} 
+          type="underline" 
+          color="red"
+          customElement={"h1"}
+          show={show || active === 1}>
+          JASON MELTON
+        </RoughNotation>
+
+      </div>
+
+      <div className="tripwire" 
+        onMouseEnter={()=>setActive(2)}
+        onMouseLeave={()=>setActive(null)}>
+
+        <RoughNotation onClick={()=>setShow(!show)} 
+          strokeWidth={20}
+          type="box" 
+          show={show || active === 2}>
+          JASON MELTON
+        </RoughNotation>
+
+      </div>
+
+      <div className="tripwire" 
+        onMouseEnter={()=>setActive(3)}
+        onMouseLeave={()=>setActive(null)}>
       <RoughNotation onClick={()=>setShow(!show)} 
         type="circle" 
         padding={25}
-        show={show}>
+        show={show || active === 3}>
         JASON MELTON
       </RoughNotation>
+
+      </div>
+
+      <div className="tripwire" 
+        onMouseEnter={()=>setShow(true)}
+        onMouseLeave={()=>setShow(false)}>
+
       <RoughNotation onClick={()=>setShow(!show)} 
         type="highlight" 
         color="pink"
@@ -41,6 +66,9 @@ const App = () => {
         <p> jason melton </p>
 
       </RoughNotation>
+
+      </div>
+      
       <RoughNotation onClick={()=>setShow(!show)} 
         type="bracket" 
         color="orange"
@@ -65,7 +93,6 @@ const App = () => {
       </RoughNotationGroup>
     
     
-
 
 
     </div>
