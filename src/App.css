@@ -1,10 +1,22 @@
 .App{
     width: 100%;
-
+    font-size: 20px;
+    background-color: #FFEDC2;
 }
 
 
+.fact-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.fact-itself{
+    width: 90%;
+    text-align: center;
+    padding: 1em;
+}
 
 
 

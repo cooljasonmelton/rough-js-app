@@ -1,0 +1,12 @@
+@keyframes fact1-animation {
+  0% {border-radius: 45%}
+  25% {border-radius: 20%}
+}
+
+.Fact1 > .fact-itself{
+  background-color: #D7FEFA;
+  border: 0.5em solid #020887;
+  border-radius: 45%;
+  animation: fact1-animation 2s infinite;
+
+}
